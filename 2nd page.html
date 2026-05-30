@@ -3,33 +3,65 @@
 <head>
     <title>Birthday Wishes</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .message{
+            max-width: 700px;
+            margin: 20px auto;
+            color: white;
+            font-size: 22px;
+            line-height: 1.8;
+            min-height: 220px;
+        }
+
+        .cursor{
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink{
+            50%{
+                opacity:0;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="page">
         <h1>My Pookie ❤️</h1>
 
-        <p id="typing"></p>
+        <div class="message">
+            <span id="typing"></span><span class="cursor">|</span>
+        </div>
 
         <a href="3rd page.html" class="btn">Next 🌹</a>
     </div>
 
-    <script>
-        const text = `To my special one, you make my day brighter with your smile,
-kindness, and love. Having you in my life is a blessing,
-and I cherish every moment we share.
-You will always hold a special place in my heart. ❤️`;
+<script>
+const text = `To my special one,
 
-        let i = 0;
+You make my day brighter with your smile, kindness, and love.
 
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
+Having you in my life is a blessing, and I cherish every moment we share.
 
-        window.onload = typeWriter;
-    </script>
+You will always hold a special place in my heart. ❤️
+
+I hope you'll always be with me. 💖`;
+
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML +=
+            text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+
+        i++;
+        setTimeout(typeWriter, 50);
+    }
+}
+
+window.onload = typeWriter;
+</script>
+
 </body>
 </html>
