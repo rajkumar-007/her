@@ -1,21 +1,24 @@
-document.addEventListener("click", function(e){
+#typing{
+    width: 80%;
+    margin: 20px auto;
+    color: white;
+    font-size: 22px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
 
-    for(let i=0;i<12;i++){
+.page{
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
 
-        let heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-
-        heart.style.left =
-            (e.clientX + Math.random()*100 - 50) + "px";
-
-        heart.style.top =
-            (e.clientY + Math.random()*100 - 50) + "px";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.remove();
-        },2000);
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
-});
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
